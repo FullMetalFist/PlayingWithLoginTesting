@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginService.h"
 
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, strong) IBOutlet UITextField *passwordTextField;
+@property (nonatomic) IBOutlet UIButton *loginButton;
+
+@property (nonatomic) LoginService *loginService;
+
+- (IBAction)loginTapped:(id)sender;
 
 @end
 

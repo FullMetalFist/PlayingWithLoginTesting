@@ -16,6 +16,8 @@
 		7C9176781B62943400902968 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9176761B62943400902968 /* LaunchScreen.xib */; };
 		7C9176841B62943400902968 /* PlayingWithLoginTestingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9176831B62943400902968 /* PlayingWithLoginTestingTests.m */; };
 		7C91768E1B62974900902968 /* PlayingWithLoginTestingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C91768D1B62974900902968 /* PlayingWithLoginTestingSpec.m */; };
+		7C9176911B62ADA500902968 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9176901B62ADA500902968 /* LoginService.m */; };
+		7C9176921B62ADA500902968 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9176901B62ADA500902968 /* LoginService.m */; };
 		D7540C1145FDAFEBC33C7D4C /* libPods-PlayingWithLoginTesting.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E145ED9B954EBAA7C641CE /* libPods-PlayingWithLoginTesting.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		7C9176821B62943400902968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C9176831B62943400902968 /* PlayingWithLoginTestingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingWithLoginTestingTests.m; sourceTree = "<group>"; };
 		7C91768D1B62974900902968 /* PlayingWithLoginTestingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingWithLoginTestingSpec.m; sourceTree = "<group>"; };
+		7C91768F1B62ADA500902968 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
+		7C9176901B62ADA500902968 /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
 		8C33CC1BCF96E63639777E1E /* Pods-PlayingWithLoginTesting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayingWithLoginTesting.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayingWithLoginTesting/Pods-PlayingWithLoginTesting.release.xcconfig"; sourceTree = "<group>"; };
 		FD910FB188F1C43DF9590EB8 /* libPods-PlayingWithLoginTestingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayingWithLoginTestingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,6 +128,8 @@
 				7C9176681B62943400902968 /* Info.plist */,
 				7C9176691B62943400902968 /* main.m */,
 				7C91768D1B62974900902968 /* PlayingWithLoginTestingSpec.m */,
+				7C91768F1B62ADA500902968 /* LoginService.h */,
+				7C9176901B62ADA500902968 /* LoginService.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 			files = (
 				7C9176701B62943400902968 /* ViewController.m in Sources */,
 				7C91766D1B62943400902968 /* AppDelegate.m in Sources */,
+				7C9176911B62ADA500902968 /* LoginService.m in Sources */,
 				7C91768E1B62974900902968 /* PlayingWithLoginTestingSpec.m in Sources */,
 				7C91766A1B62943400902968 /* main.m in Sources */,
 			);
@@ -333,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C9176841B62943400902968 /* PlayingWithLoginTestingTests.m in Sources */,
+				7C9176921B62ADA500902968 /* LoginService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

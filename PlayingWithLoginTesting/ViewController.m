@@ -10,11 +10,17 @@
 
 @interface ViewController ()
 
-
-
 @end
 
 @implementation ViewController
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.loginService = [[LoginService alloc] init];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +30,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)loginTapped:(id)sender {
+    [self.loginService verifyUsername:self.usernameTextField.text
+                             password:self.passwordTextField.text
+                           completion:nil];
 }
 
 @end
