@@ -50,41 +50,54 @@ describe(@"ViewController", ^{
     
     describe(@"logging in", ^{
         // vc => login service
+        __block id _mockLoginService;
+        
+        beforeEach(^{
+            //
+            _mockLoginService = [OCMockObject mockForClass:[LoginService class]];
+            _vc.loginService = _mockLoginService;
+        });
+        afterEach(^{
+            // assert
+            [_mockLoginService verify];
+        });
+        
         it(@"should verify username and password with the login service", ^{
             // arrange
-            id mockLoginService = [OCMockObject mockForClass:[LoginService class]];
-            [[mockLoginService expect] verifyUsername:@"dude"
+            [[_mockLoginService expect] verifyUsername:@"dude"
                                              password:@"yeah"
                                            completion:[OCMArg any]];
-            _vc.loginService = mockLoginService;
+            
             _vc.usernameTextField.text = @"dude";
             _vc.passwordTextField.text = @"yeah";
             
             // act
             [_vc loginTapped:nil];
-            // assert
-            [mockLoginService verify];
         });
-    });
-    
-    beforeAll(^{
-
-    });
-    
-    beforeEach(^{
-
-    });
-    
-    it(@"", ^{
-
-    });  
-    
-    afterEach(^{
-
-    });
-    
-    afterAll(^{
-
+        context(@"invalid credentials", ^{
+            __block id _alertProvider;
+            beforeEach(^{
+                _alertProvider = [OCMockObject mockForClass:[AlertViewProvider class]];
+                _vc.alertProvider = _alertProvider;
+                [[_mockLoginService stub] verifyUsername:[OCMArg any]
+                                                password:[OCMArg any]
+                                              completion:[OCMArg checkWithBlock:^BOOL(LoginServiceCompletionBlock block) {
+                    block(NO);
+                    return YES;
+                }]];
+            });
+            it(@"should show an alert", ^{
+                id mockAlert = [OCMockObject mockForClass:[UIAlertView class]];
+                [[[_alertProvider expect] andReturn:mockAlert] alertViewWithTitle:[OCMArg any]
+                                                    message:[OCMArg any]];
+                [[mockAlert expect] show];
+                
+                [_vc loginTapped:nil];
+                
+                [_alertProvider verify];
+                [mockAlert verify];
+            });
+        });
     });
 });
 

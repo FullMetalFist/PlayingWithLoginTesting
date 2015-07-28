@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginService.h"
+#import "AlertViewProvider.h"
 
 @interface ViewController : UIViewController
 
@@ -16,6 +17,7 @@
 @property (nonatomic) IBOutlet UIButton *loginButton;
 
 @property (nonatomic) LoginService *loginService;
+@property (nonatomic) AlertViewProvider *alertProvider;
 
 - (IBAction)loginTapped:(id)sender;
 
