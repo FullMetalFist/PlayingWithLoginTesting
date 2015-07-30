@@ -18,6 +18,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.loginService = [[LoginService alloc] init];
+        self.alertProvider = [[AlertViewProvider alloc] init];
     }
     return self;
 }
@@ -35,7 +36,10 @@
 - (IBAction)loginTapped:(id)sender {
     [self.loginService verifyUsername:self.usernameTextField.text
                              password:self.passwordTextField.text
-                           completion:nil];
+                           completion:^(BOOL isValid) {
+                               UIAlertView *alert = [self.alertProvider alertViewWithTitle:@"Error" message:@"Invalid credentials"];
+                               [alert show];
+                           }];
 }
 
 @end
